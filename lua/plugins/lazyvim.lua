@@ -1,6 +1,11 @@
+if vim.g.vscode then
+  return {}
+end
+
 return {
-  "LazyVim/LazyVim",
-  opts = {
-    colorscheme = "catppuccin-macchiato",
+  { "LazyVim/LazyVim", colorscheme = "tokyonight" },
+  {
+    "folke/tokyonight.nvim",
+    opts = { style = "storm" },
   },
 }

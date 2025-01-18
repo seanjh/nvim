@@ -1,0 +1,12 @@
+return {}
+-- return {
+--   "echasnovski/mini.indentscope",
+--   opts = {
+--     draw = {
+--       -- Animation rule for scope's first line
+--       delay = 0,
+--       -- Animation rule for scope's last line
+--       animation = require("mini.indentscope").gen_animation.none(),
+--     },
+--   },
+-- }
