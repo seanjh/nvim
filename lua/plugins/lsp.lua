@@ -34,7 +34,7 @@ return {
         "eslint_d",
         "prettierd",
         "ruff",
-        "nixpkgs-fmt",
+        -- "nixfmt",
         "markuplint",
         "tflint",
         "shellcheck",
