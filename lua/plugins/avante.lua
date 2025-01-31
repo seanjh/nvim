@@ -1,5 +1,6 @@
+local enabled = true
 -- stylua: ignore
-if true then return {} end
+if not enabled then return {} end
 
 return {
   "yetone/avante.nvim",
@@ -15,7 +16,7 @@ return {
     "MunifTanjim/nui.nvim",
     --- The below dependencies are optional,
     -- "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-    -- "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+    "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
     -- "zbirenbaum/copilot.lua", -- for providers='copilot'
     {
       -- support for image pasting
@@ -88,9 +89,6 @@ return {
           api_key_name = "",
           endpoint = "http://127.0.0.1:11434/v1",
           model = "codellama:7b",
-          -- temperature = 0.2,
-          -- context_length = 4096,
-          -- stop_tokens = { "</s>", "<|endoftext|>" },
         },
       }
     end

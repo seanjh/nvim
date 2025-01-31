@@ -1,3 +1,7 @@
+local enabled = false
+-- stylua: ignore
+if not enabled then return {} end
+
 return {
   {
     "stevearc/conform.nvim",
