@@ -60,6 +60,22 @@ return {
         temperature = 0,
         max_tokens = 4096,
       },
+      openai = {
+        endpoint = "https://api.openai.com/v1",
+        model = "gpt-4o",
+        temperature = 0,
+        max_tokens = 4096,
+      },
+      vendors = {
+        ollama = {
+          __inherited_from = "openai",
+          api_key_name = "",
+          endpoint = "http://127.0.0.1:11434/v1",
+          model = "qwen2.5-coder:7b",
+          -- model = "codellama:7b",
+          -- model = "deepseek-r1:7b",
+        },
+      },
       file_selector = {
         provider = "fzf",
         provider_opts = {},
@@ -83,17 +99,6 @@ return {
       config.provider = "ollama"
       config.auto_suggestions_provider = "ollama"
       config.behaviour.auto_suggestions = true
-      config.vendors = {
-        ollama = {
-          __inherited_from = "openai",
-          api_key_name = "",
-          endpoint = "http://127.0.0.1:11434/v1",
-          -- model = "codellama:7b",
-          -- model = "qwen2.5-coder:7b",
-          -- model = "deepseek-r1:7b",
-          model = "codeqwen:7b",
-        },
-      }
     end
 
     return config
