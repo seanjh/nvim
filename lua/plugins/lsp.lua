@@ -11,8 +11,8 @@ return {
         tailwindcss = {
           root_dir = require("lspconfig").util.root_pattern("tailwind.config.js", "tailwind.config.ts"),
         },
-        solargraph = {
-          root_dir = require("lspconfig.util").root_pattern(".git", "Gemfile", ".solargraph.yml"),
+        ruby_lsp = {
+          init_options = {},
         },
       },
     },
