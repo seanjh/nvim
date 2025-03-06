@@ -20,6 +20,8 @@ return {
       formatters = {
         erb_format = {
           condition = function(_, ctx)
+            -- erb_format assumes you're operating on HTML, so it should
+            -- be disabled for plaintext ERB templates.
             local skip_patterns = {
               "%.text%.erb$",
             }
