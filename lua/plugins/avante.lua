@@ -98,7 +98,7 @@ return {
     if vim.fn.executable("ollama") == 1 then
       config.provider = "ollama"
       config.auto_suggestions_provider = "ollama"
-      config.behaviour.auto_suggestions = true
+      -- config.behaviour.auto_suggestions = true
     end
 
     return config
