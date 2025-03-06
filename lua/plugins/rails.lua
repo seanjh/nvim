@@ -12,7 +12,4 @@ return {
       indent = { enable = true, disable = { "ruby" } },
     },
   },
-  -- { "tpope/vim-dadbod" },
-  -- { "tpope/vim-sleuth" },
-  -- { "tpope/vim-endwise" },
 }
