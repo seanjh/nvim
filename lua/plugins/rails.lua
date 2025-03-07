@@ -38,4 +38,14 @@ return {
       },
     },
   },
+
+  {
+    "ibhagwan/fzf-lua",
+    opts = function(_, opts)
+      opts.file_ignore_patterns = opts.file_ignore_patterns or {}
+      -- Always ignore /.gem and /.bundle regardless of whether they're .gitignored
+      vim.list_extend(opts.file_ignore_patterns, { "^%.gem", "^%.bundle" })
+      return opts
+    end,
+  },
 }
