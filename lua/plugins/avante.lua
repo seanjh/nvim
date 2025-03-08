@@ -53,10 +53,11 @@ return {
         auto_suggestions = false,
         auto_set_highlight_group = true,
         auto_set_keymaps = true,
+        enable_cursor_planning_mode = true,
       },
       claude = {
         endpoint = "https://api.anthropic.com",
-        model = "claude-3-5-sonnet-20241022",
+        model = "claude-3-7-sonnet-latest",
         temperature = 0,
         max_tokens = 4096,
       },
@@ -67,6 +68,13 @@ return {
         max_tokens = 4096,
       },
       vendors = {
+        groq = { -- define groq provider
+          __inherited_from = "openai",
+          endpoint = "https://api.groq.com/openai/v1/",
+          -- model = "llama-3.3-70b-versatile",
+          model = "qwen-2.5-coder-32b",
+          max_tokens = 32768,
+        },
         ollama = {
           __inherited_from = "openai",
           api_key_name = "",
@@ -95,11 +103,11 @@ return {
       },
     }
 
-    if vim.fn.executable("ollama") == 1 then
-      config.provider = "ollama"
-      config.auto_suggestions_provider = "ollama"
-      -- config.behaviour.auto_suggestions = true
-    end
+    -- if vim.fn.executable("ollama") == 1 then
+    --   config.provider = "ollama"
+    --   config.auto_suggestions_provider = "ollama"
+    --   config.behaviour.auto_suggestions = true
+    -- end
 
     return config
   end,
