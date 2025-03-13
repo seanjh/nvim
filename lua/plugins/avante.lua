@@ -45,6 +45,13 @@ return {
     },
   },
 
+  keys = {
+    {
+      "<leader>ax",
+      "<cmd>AvanteClear<cr>",
+      desc = "avante: clear context window",
+    },
+  },
   opts = function()
     local config = {
       provider = "claude",

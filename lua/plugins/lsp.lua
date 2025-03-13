@@ -11,8 +11,10 @@ return {
         tailwindcss = {
           root_dir = require("lspconfig").util.root_pattern("tailwind.config.js", "tailwind.config.ts"),
         },
+        rubocop = { enabled = false },
         ruby_lsp = {
-          init_options = {},
+          mason = false,
+          cmd = { "bundle", "exec", "ruby-lsp" },
         },
       },
     },
