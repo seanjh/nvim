@@ -1,7 +1,3 @@
-local enabled = false
--- stylua: ignore
-if not enabled then return {} end
-
 return {
   {
     "stevearc/conform.nvim",
@@ -20,6 +16,7 @@ return {
           markdown = { "markdownlint" },
           ["markdown.mdx"] = { "markdownlint" },
           python = { "black", "isort" },
+          ruby = { "standardrb" },
         },
         formatters = {},
       }
