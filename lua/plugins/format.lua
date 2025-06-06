@@ -15,7 +15,7 @@ return {
           yaml = { "yamlfix" },
           markdown = { "markdownlint" },
           ["markdown.mdx"] = { "markdownlint" },
-          python = { "black", "isort" },
+          python = { "ruff_format" },
           ruby = { "standardrb" },
         },
         formatters = {},

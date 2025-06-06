@@ -1,9 +1,13 @@
+if vim.g.vscode then
+  return {}
+end
+
 return {
-  { "EdenEast/nightfox.nvim" },
+  { "shaunsingh/nord.nvim", name = "nord" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "carbonfox",
+      colorscheme = "nord",
     },
   },
 }
