@@ -1,4 +1,4 @@
-local enabled = true
+local enabled = false
 -- stylua: ignore
 if not enabled then return {} end
 
@@ -74,23 +74,26 @@ return {
         temperature = 0,
         max_tokens = 4096,
       },
-      vendors = {
-        groq = { -- define groq provider
-          __inherited_from = "openai",
-          endpoint = "https://api.groq.com/openai/v1/",
-          -- model = "llama-3.3-70b-versatile",
-          model = "qwen-2.5-coder-32b",
-          max_tokens = 32768,
-        },
-        ollama = {
-          __inherited_from = "openai",
-          api_key_name = "",
-          endpoint = "http://127.0.0.1:11434/v1",
-          model = "qwen2.5-coder:7b",
-          -- model = "codellama:7b",
-          -- model = "deepseek-r1:7b",
-        },
+      ollama = {
+        model = "qwen2.5-coder:7b",
       },
+      -- vendors = {
+      --   groq = { -- define groq provider
+      --     __inherited_from = "openai",
+      --     endpoint = "https://api.groq.com/openai/v1/",
+      --     -- model = "llama-3.3-70b-versatile",
+      --     model = "qwen-2.5-coder-32b",
+      --     max_tokens = 32768,
+      --   },
+      --   ollama = {
+      --     __inherited_from = "openai",
+      --     api_key_name = "",
+      --     endpoint = "http://127.0.0.1:11434/v1",
+      --     model = "qwen2.5-coder:7b",
+      --     -- model = "codellama:7b",
+      --     -- model = "deepseek-r1:7b",
+      --   },
+      -- },
       file_selector = {
         provider = "fzf",
         provider_opts = {},
