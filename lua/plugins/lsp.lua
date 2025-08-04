@@ -14,9 +14,18 @@ return {
         rubocop = { enabled = false },
         ruby_lsp = {
           mason = false,
-          cmd = { "bundle", "exec", "ruby-lsp" },
+          setup = function()
+            local cmd = vim.fn.executable("ruby-lsp") == 1 and { "ruby-lsp" } or { "bundle", "exec", "ruby-lsp" }
+            require("lspconfig").ruby_lsp.setup({ cmd = cmd, mason = false })
+            return true -- prevent default setup
+          end,
         },
       },
     },
+  },
+  {
+    "b0o/SchemaStore.nvim",
+    lazy = true,
+    version = false, -- last release is way too old
   },
 }
