@@ -6,6 +6,8 @@ return {
       PATH = "append",
       ensure_installed = {
         "marksman",
+        "yamlls",
+        "jsonls",
       },
     },
   },
@@ -14,7 +16,27 @@ return {
     "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
-        "markdownlint-cli2",
+        "oxlint",
+        "nil",
+        "markdownlint",
+        "fixjson",
+        "prettierd",
+        "nixfmt",
+        "yamlfix",
+      },
+    },
+  },
+  {
+    "nvim-lspconfig",
+    opts = {
+      servers = {
+        vtsls = {
+          preferences = {
+            -- importModuleSpecifier = "relative",
+            importModuleSpecifier = "non-relative",
+            importModuleSpecifierEnding = "minimal",
+          },
+        },
       },
     },
   },
