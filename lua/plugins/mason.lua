@@ -16,12 +16,27 @@ return {
     "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
+        "oxlint",
         "nil",
         "markdownlint",
         "fixjson",
         "prettierd",
         "nixfmt",
         "yamlfix",
+      },
+    },
+  },
+  {
+    "nvim-lspconfig",
+    opts = {
+      servers = {
+        vtsls = {
+          preferences = {
+            -- importModuleSpecifier = "relative",
+            importModuleSpecifier = "non-relative",
+            importModuleSpecifierEnding = "minimal",
+          },
+        },
       },
     },
   },

@@ -12,6 +12,9 @@ return {
           root_dir = require("lspconfig").util.root_pattern("tailwind.config.js", "tailwind.config.ts"),
         },
         rubocop = { enabled = false },
+        oxlint = {
+          root_dir = require("lspconfig").util.root_pattern(".oxlintrc.json"),
+        },
         ruby_lsp = {
           mason = false,
           setup = function()
