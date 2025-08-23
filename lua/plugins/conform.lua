@@ -18,13 +18,12 @@ local has_prettier_config = function()
     end
   end
 
-  -- Check package.json for prettier config
   local package_json = vim.fn.findfile("package.json", ".;")
   if package_json ~= "" then
     local ok, content = pcall(vim.fn.readfile, package_json)
     if ok then
-      local json_str = table.concat(content, "\n")
-      if json_str:match('"prettier"') then
+      local still_ok, parsed = pcall(vim.json.decode, content)
+      if still_ok and parsed.prettier then
         return true
       end
     end

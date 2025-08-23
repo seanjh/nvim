@@ -7,17 +7,22 @@ return {
     opts = function()
       local dap = require("dap")
 
-      -- Adapter: use js-debug from Mason
       if not dap.adapters["pwa-node"] then
+        local js_debug_path =
+          require("lazyvim.util").get_pkg_path("js-debug-adapter", "/js-debug/src/dapDebugServer.js")
+        if vim.fn.filereadable(js_debug_path) == 0 then
+          vim.notify("js-debug-adapter not found", vim.log.levels.WARN)
+          return
+        end
+
         dap.adapters["pwa-node"] = {
           type = "server",
           host = "localhost",
           port = "${port}",
           executable = {
             command = "node",
-            -- ✅ This is the correct entrypoint for js-debug-adapter from Mason
             args = {
-              require("lazyvim.util").get_pkg_path("js-debug-adapter", "/js-debug/src/dapDebugServer.js"),
+              js_debug_path,
               "${port}",
             },
           },
