@@ -24,6 +24,7 @@ return {
         "nixfmt",
         "yamlfix",
         "jinja-lsp",
+        "django-template-lsp",
       },
     },
   },

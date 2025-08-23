@@ -6,9 +6,11 @@ return {
         filtered_items = {
           hide_dotfiles = false,
           hide_gitignored = true,
-          always_show = { ".aws", ".circleci", ".github" },
+          always_show = { ".aws", ".circleci", ".github", ".env" },
           always_show_by_pattern = {
             ".env*",
+            "devbox.*",
+            ".venv",
           },
         },
       },
