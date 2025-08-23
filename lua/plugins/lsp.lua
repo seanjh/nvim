@@ -31,4 +31,21 @@ return {
     lazy = true,
     version = false, -- last release is way too old
   },
+  {
+    "nvim-lspconfig",
+    opts = {
+      servers = {
+        jinja_lsp = {
+          filetypes = { "jinja", "html" },
+        },
+        vtsls = {
+          preferences = {
+            -- importModuleSpecifier = "relative",
+            importModuleSpecifier = "non-relative",
+            importModuleSpecifierEnding = "minimal",
+          },
+        },
+      },
+    },
+  },
 }

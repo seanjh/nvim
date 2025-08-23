@@ -23,20 +23,8 @@ return {
         "prettierd",
         "nixfmt",
         "yamlfix",
-      },
-    },
-  },
-  {
-    "nvim-lspconfig",
-    opts = {
-      servers = {
-        vtsls = {
-          preferences = {
-            -- importModuleSpecifier = "relative",
-            importModuleSpecifier = "non-relative",
-            importModuleSpecifierEnding = "minimal",
-          },
-        },
+        "jinja-lsp",
+        "django-template-lsp",
       },
     },
   },

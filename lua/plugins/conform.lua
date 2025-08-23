@@ -1,3 +1,37 @@
+local has_prettier_config = function()
+  local configs = {
+    ".prettierrc",
+    ".prettierrc.json",
+    ".prettierrc.yml",
+    ".prettierrc.yaml",
+    ".prettierrc.js",
+    ".prettierrc.mjs",
+    ".prettierrc.cjs",
+    "prettier.config.js",
+    "prettier.config.mjs",
+    "prettier.config.cjs",
+  }
+
+  for _, config in ipairs(configs) do
+    if vim.fn.findfile(config, ".;") ~= "" then
+      return true
+    end
+  end
+
+  local package_json = vim.fn.findfile("package.json", ".;")
+  if package_json ~= "" then
+    local ok, content = pcall(vim.fn.readfile, package_json)
+    if ok then
+      local still_ok, parsed = pcall(vim.json.decode, content)
+      if still_ok and parsed.prettier then
+        return true
+      end
+    end
+  end
+
+  return false
+end
+
 return {
   {
     "stevearc/conform.nvim",
@@ -17,9 +51,9 @@ return {
           javascriptreact = { "prettier" },
           typescript = { "prettier" },
           typescriptreact = { "prettier" },
-          json = { "fixjson" },
-          jsonc = { "fixjson" },
-          yaml = { "yamlfix" },
+          json = has_prettier_config() and { "prettier" } or { "fixjson" },
+          jsonc = has_prettier_config() and { "prettier" } or { "fixjson" },
+          yaml = has_prettier_config() and { "prettier" } or { "yamlfix" },
           markdown = { "markdownlint" },
           ["markdown.mdx"] = { "markdownlint" },
           python = { "ruff_format" },
