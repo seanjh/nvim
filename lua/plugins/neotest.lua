@@ -4,6 +4,7 @@ return {
     "nvim-neotest/neotest",
     dependencies = {
       "zidhuss/neotest-minitest",
+      "marilari88/neotest-vitest",
     },
     config = {
       adapters = {
@@ -17,6 +18,7 @@ return {
             })
           end,
         },
+        ["neotest-vitest"] = {},
       },
     },
   },
