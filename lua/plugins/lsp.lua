@@ -15,6 +15,30 @@ return {
         oxlint = {
           root_dir = require("lspconfig").util.root_pattern(".oxlintrc.json"),
         },
+        -- pylsp = {
+        --   settings = {
+        --     pylsp = {
+        --       plugins = {
+        --         pycodestyle = { enabled = false },
+        --         pyflakes = { enabled = false },
+        --         yapf = { enabled = false },
+        --         pylint = { enabled = false },
+        --         mccabe = { enabled = false },
+        --         rope_autoimport = { enabled = false },
+        --         ruff = { enabled = false },
+        --         -- mypy = { enabled = true, live_mode = true, dmypy = true },
+        --         -- https://github.com/python-lsp/pylsp-mypy?tab=readme-ov-file#configuration
+        --         pylsp_mypy = {
+        --           enabled = true,
+        --           live_mode = true,
+        --           dmypy = false,
+        --           report_progress = true,
+        --           -- overrides = {"--python-executable", "/path/to/venv/bin/python", true},
+        --         },
+        --       },
+        --     },
+        --   },
+        -- },
         ruby_lsp = {
           mason = false,
           setup = function()
@@ -23,18 +47,6 @@ return {
             return true -- prevent default setup
           end,
         },
-      },
-    },
-  },
-  {
-    "b0o/SchemaStore.nvim",
-    lazy = true,
-    version = false, -- last release is way too old
-  },
-  {
-    "nvim-lspconfig",
-    opts = {
-      servers = {
         jinja_lsp = {
           filetypes = { "jinja", "html" },
         },
@@ -47,5 +59,10 @@ return {
         },
       },
     },
+  },
+  {
+    "b0o/SchemaStore.nvim",
+    lazy = true,
+    version = false, -- last release is way too old
   },
 }
