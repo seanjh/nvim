@@ -8,6 +8,7 @@ return {
         "marksman",
         "yamlls",
         "jsonls",
+        -- "pylsp",
       },
     },
   },
@@ -15,6 +16,7 @@ return {
     -- f.k.a. "williamboman/mason.nvim",
     "mason-org/mason.nvim",
     opts = {
+      PATH = "append",
       ensure_installed = {
         "oxlint",
         "nil",
@@ -23,8 +25,12 @@ return {
         "prettierd",
         "nixfmt",
         "yamlfix",
+        "mypy",
         "jinja-lsp",
         "django-template-lsp",
+        "tailwindcss-language-server",
+        "djlint",
+        "typos",
       },
     },
   },

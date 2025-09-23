@@ -8,9 +8,6 @@ return {
           root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
           single_file_support = false,
         },
-        tailwindcss = {
-          root_dir = require("lspconfig").util.root_pattern("tailwind.config.js", "tailwind.config.ts"),
-        },
         rubocop = { enabled = false },
         oxlint = {
           root_dir = require("lspconfig").util.root_pattern(".oxlintrc.json"),
@@ -23,18 +20,6 @@ return {
             return true -- prevent default setup
           end,
         },
-      },
-    },
-  },
-  {
-    "b0o/SchemaStore.nvim",
-    lazy = true,
-    version = false, -- last release is way too old
-  },
-  {
-    "nvim-lspconfig",
-    opts = {
-      servers = {
         jinja_lsp = {
           filetypes = { "jinja", "html" },
         },
@@ -47,5 +32,10 @@ return {
         },
       },
     },
+  },
+  {
+    "b0o/SchemaStore.nvim",
+    lazy = true,
+    version = false, -- last release is way too old
   },
 }

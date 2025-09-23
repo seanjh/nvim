@@ -56,11 +56,15 @@ return {
           yaml = has_prettier_config() and { "prettier" } or { "yamlfix" },
           markdown = { "markdownlint" },
           ["markdown.mdx"] = { "markdownlint" },
-          python = { "ruff_format" },
+          python = { "ruff_fix", "ruff_format" },
           ruby = { "standardrb" },
           eruby = { "erb_lint" },
+          htmldjango = { "djlint" },
         },
         formatters = {
+          djlint = {
+            args = { "-", "--reformat" },
+          },
           erb_lint = {
             stdin = false,
             tmpfile_format = ".conform.$RANDOM.$FILENAME",
