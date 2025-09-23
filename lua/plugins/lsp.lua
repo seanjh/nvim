@@ -8,37 +8,10 @@ return {
           root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
           single_file_support = false,
         },
-        -- tailwindcss = {
-        --   root_dir = require("lspconfig").util.root_pattern("tailwind.config.js", "tailwind.config.ts"),
-        -- },
         rubocop = { enabled = false },
         oxlint = {
           root_dir = require("lspconfig").util.root_pattern(".oxlintrc.json"),
         },
-        -- pylsp = {
-        --   settings = {
-        --     pylsp = {
-        --       plugins = {
-        --         pycodestyle = { enabled = false },
-        --         pyflakes = { enabled = false },
-        --         yapf = { enabled = false },
-        --         pylint = { enabled = false },
-        --         mccabe = { enabled = false },
-        --         rope_autoimport = { enabled = false },
-        --         ruff = { enabled = false },
-        --         -- mypy = { enabled = true, live_mode = true, dmypy = true },
-        --         -- https://github.com/python-lsp/pylsp-mypy?tab=readme-ov-file#configuration
-        --         pylsp_mypy = {
-        --           enabled = true,
-        --           live_mode = true,
-        --           dmypy = false,
-        --           report_progress = true,
-        --           -- overrides = {"--python-executable", "/path/to/venv/bin/python", true},
-        --         },
-        --       },
-        --     },
-        --   },
-        -- },
         ruby_lsp = {
           mason = false,
           setup = function()
