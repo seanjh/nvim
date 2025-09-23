@@ -16,6 +16,7 @@ return {
     -- f.k.a. "williamboman/mason.nvim",
     "mason-org/mason.nvim",
     opts = {
+      PATH = "append",
       ensure_installed = {
         "oxlint",
         "nil",
@@ -27,7 +28,9 @@ return {
         "mypy",
         "jinja-lsp",
         "django-template-lsp",
+        "tailwindcss-language-server",
         "djlint",
+        "typos",
       },
     },
   },
