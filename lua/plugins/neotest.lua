@@ -19,6 +19,10 @@ return {
           end,
         },
         ["neotest-vitest"] = {},
+
+        ["neotest-python"] = {
+          args = { "--numprocesses", "0", "--no-cov" },
+        },
       },
     },
   },
