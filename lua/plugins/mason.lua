@@ -31,6 +31,7 @@ return {
         "tailwindcss-language-server",
         "djlint",
         "typos",
+        "xcode-build-server",
       },
     },
   },
