@@ -23,6 +23,10 @@ return {
         jinja_lsp = {
           filetypes = { "jinja", "html" },
         },
+        sourcekit = {
+          cmd = { "xcrun", "sourcekit-lsp" },
+          filetypes = { "swift" },
+        },
         vtsls = {
           preferences = {
             -- importModuleSpecifier = "relative",

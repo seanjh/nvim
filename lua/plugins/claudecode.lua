@@ -1,3 +1,7 @@
+if false then
+  return {}
+end
+
 return {
   "coder/claudecode.nvim",
   dependencies = { "folke/snacks.nvim" },
