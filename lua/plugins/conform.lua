@@ -59,6 +59,7 @@ return {
           python = { "ruff_fix", "ruff_format" },
           ruby = { "standardrb" },
           eruby = { "erb_lint" },
+          swift = { "swift_format" },
           htmldjango = { "djlint" },
         },
         formatters = {
@@ -70,6 +71,11 @@ return {
             tmpfile_format = ".conform.$RANDOM.$FILENAME",
             command = "bundle",
             args = { "exec", "erb_lint", "--autocorrect", "$FILENAME" },
+          },
+          swift_format = {
+            command = "swift-format",
+            args = { "format", "--in-place", "$FILENAME" },
+            stdin = false,
           },
         },
       }

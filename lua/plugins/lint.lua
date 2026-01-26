@@ -19,6 +19,7 @@ return {
     linters_by_ft = {
       python = { "ruff", "mypy" },
       djangohtml = { "djlint" },
+      swift = { "swiftlint" },
       -- Use the "*" filetype to run linters on all filetypes.
       ["*"] = { "typos" },
       -- Use the "_" filetype to run linters on filetypes that don't have other linters configured.
