@@ -32,7 +32,7 @@ return {
           end,
         },
         jinja_lsp = {
-          filetypes = { "jinja", "html" },
+          filetypes = { "jinja" },
         },
         sourcekit = {
           cmd = { "xcrun", "sourcekit-lsp" },
