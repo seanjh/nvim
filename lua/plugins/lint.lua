@@ -26,10 +26,16 @@ return {
       -- ['_'] = { 'fallback linter' },
     },
     linters = {
-      -- mypy = {
-      --   -- cmd = vim.fn.expand("~/work/mypy-debug.sh"),
-      --   -- cwd = "/Users/sean/work/sage",
-      -- },
+      mypy = (function()
+        local mypy = require("lint").linters.mypy
+        local use_uv = vim.fn.executable("uv") == 1
+        return vim.tbl_extend("force", mypy, {
+          cmd = use_uv and "uv" or "mypy",
+          args = use_uv
+            and vim.list_extend({ "run", "mypy" }, vim.deepcopy(mypy.args))
+            or mypy.args,
+        })
+      end)(),
     },
   },
 }
